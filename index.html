@@ -1,162 +1,363 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Igrejas+</title>
- 
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
- 
-<style>
-html {
-scroll-behavior: smooth;
-}
- 
-section {
-scroll-margin-top: 90px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igrejas+</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* ==================== Geral ==================== */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section {
+            scroll-margin-top: 90px;
+            box-shadow: inset 0 0 50px rgba(13, 110, 253, 0.03);
+            /* leve profundidade azul */
+            transition: all 0.5s ease;
+        }
+
+        /* ==================== Navbar ==================== */
+        .navbar {
+            background: linear-gradient(90deg, #5dade2 0%, #5dade2 100%);
+        }
+
+        .navbar .nav-link {
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar .nav-link:hover {
+            color: #cfe2ff;
+            transform: scale(1.05);
+        }
+
+        /* ==================== Seções ==================== */
+        /* Seção inicial */
+        #inicio {
+            background: linear-gradient(180deg, #e7f1ff 0%, #ffffff 100%);
+        }
+
+        /* ==================== Cards ==================== */
+        .card {
+            border: 1px solid #cfe2ff;
+            background-color: #f5faff;
+            transition: all 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 35px rgba(13, 110, 253, 0.25);
+        }
+
+        .card-body h5 {
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .card-body h5:hover {
+            color: #0056b3;
+        }
+
+        /* ==================== Títulos ==================== */
+        h1,
+        h2 {
+            transition: all 0.4s ease;
+        }
+
+        h1:hover,
+        h2:hover {
+            color: #0d6efd;
+            text-shadow: 1px 1px 3px rgba(0, 0, 128, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* ==================== Botões ==================== */
+        .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004080;
+            transform: scale(1.05);
+        }
+
+        /* ==================== Imagens ==================== */
+        .card-img-top {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-img-top:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(13, 110, 253, 0.2);
+        }
+
+        /* ==================== Rodapé ==================== */
+        footer {
+            background: linear-gradient(90deg, #0d6efd 0%, #0056b3 100%);
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 128, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        /* ==================== Links ==================== */
+        a {
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+    </style>
 </head>
- 
+
 <body class="bg-light">
- 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow fixed-top">
-<div class="container">
-<a class="navbar-brand fw-bold" href="#inicio">Igrejas+</a>
- 
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
-<span class="navbar-toggler-icon"></span>
-</button>
- 
-<div class="collapse navbar-collapse" id="menuNavbar">
-<ul class="navbar-nav ms-auto">
-<li class="nav-item">
-<a class="nav-link" href="#inicio">Who are we?</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#funcionalidades">Features</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#equipa">Our Team</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#linguagens">Languages</a>
-</li>
-</ul>
-</div>
-</div>
-</nav>
- 
-<div style="height: 80px;"></div>
- 
- 
-<section id="inicio" class="py-5 text-center bg-white">
-<div class="container">
-<h1 class="fw-bold">Welcome to Igrejas+</h1>
-<p class="lead text-muted">
-Igrejas+ is a platform designed to improve communication between church members and leaders.
-It provides information about events, services, schedules, and activities.
-It allows everyone to stay informed through messages, news, and prayer requests.
-</p>
-</div>
-</section>
- 
-<!-- Funcionalidades -->
-<section id="funcionalidades" class="py-5 bg-light">
-<div class="container">
-<div class="text-center mb-5">
-<h2 class="fw-bold">Application Features</h2>
-</div>
- 
-<div class="row g-4 text-center">
- 
-<div class="col-md-4">
-<div class="card shadow-sm border-0 h-100">
-<div class="card-body">
-<h5 class="fw-bold">📅 Event Management</h5>
-<p>Real-time view of church events, services, and activities.</p>
-</div>
-</div>
-</div>
- 
-<div class="col-md-4">
-<div class="card shadow-sm border-0 h-100">
-<div class="card-body">
-<h5 class="fw-bold">📢 News & Announcements</h5>
-<p>Important updates and announcements for all members.</p>
-</div>
-</div>
-</div>
- 
-<div class="col-md-4">
-<div class="card shadow-sm border-0 h-100">
-<div class="card-body">
-<h5 class="fw-bold">🙏 Prayer Requests</h5>
-<p>A space to share and follow prayer requests from the community.</p>
-</div>
-</div>
-</div>
- 
-</div>
-</div>
-</section>
- 
-<!-- Nossa Equipa -->
-<section id="equipa" class="py-5 bg-white">
-<div class="container">
-<div class="text-center mb-5">
-<h2 class="fw-bold">Our Team</h2>
-</div>
- 
-<div class="row g-4 justify-content-center">
- 
-<div class="col-md-4">
-<div class="card h-100 shadow-sm border-0 text-center">
-<img src="https://via.placeholder.com/150"
-class="card-img-top rounded-circle mx-auto mt-3"
-style="width:150px;"
-alt="Mario Junior">
-<div class="card-body">
-<h5 class="card-title fw-bold">Mario Junior Chimene</h5>
-<p class="card-text">Application Developer</p>
-</div>
-</div>
-</div>
- 
-<div class="col-md-4">
-<div class="card h-100 shadow-sm border-0 text-center">
-<img src="https://via.placeholder.com/150"
-class="card-img-top rounded-circle mx-auto mt-3"
-style="width:150px;"
-alt="Mateus Trindade">
-<div class="card-body">
-<h5 class="card-title fw-bold">Mateus Trindade</h5>
-<p class="card-text">Application Developer</p>
-</div>
-</div>
-</div>
- 
-</div>
-</div>
-</section>
- 
-<!-- Linguagens -->
-<section id="linguagens" class="py-5 bg-light">
-<div class="container text-center">
-<h2 class="fw-bold mb-4">Programming Languages</h2>
-<p class="lead">HTML, CSS, Bootstrap</p>
-</div>
-</section>
- 
-<!-- Footer -->
-<footer class="bg-primary text-white text-center py-3">
-<p class="mb-0">© 2026 Igrejas+ - All rights reserved</p>
-</footer>
- 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
- 
+
+    <nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#inicio">Igrejas+</a>
+            <img src="img/logo-igrejas.png" alt="Logo" style="width:40px; height:40px;" class="d-inline-block align-text-top ms-2">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Quem Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#funcionalidades">Funcionalidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#equipa">Nossa Equipa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#linguagens">Linguagens</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#software">Software</a></li>
+                  
+                </ul>
+                <a href="" class="btn btn-outline-primary ms-2">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div style="height: 80px;"></div>
+
+    <section id="inicio" class="py-5 text-center" data-aos="fade-up">
+        <div class="container">
+            <h1 class="fw-bold">Bem-vindo ao Igrejas+</h1>
+            <p class="lead text-muted">
+                O Igrejas+ é uma plataforma criada para melhorar a comunicação entre os membros da igreja e os seus
+                líderes.
+                A aplicação fornece informações sobre eventos, cultos, horários e atividades da igreja.
+                Também permite que todos se mantenham informados através de mensagens, notícias e pedidos de oração.
+            </p>
+        </div>
+    </section>
+
+    <section id="funcionalidades" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Funcionalidades da Aplicação</h2>
+            </div>
+
+            <div class="row g-4 text-center">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body">
+                            <h5 class="fw-bold">📅 Gestão de Eventos</h5>
+                            <p>Visualização em tempo real de eventos, cultos e atividades da igreja.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body">
+                            <h5 class="fw-bold">📢 Notícias e Avisos</h5>
+                            <p>Atualizações importantes e anúncios para todos os membros.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body">
+                            <h5 class="fw-bold">🙏 Pedidos de Oração</h5>
+                            <p>Um espaço para partilhar e acompanhar pedidos de oração da comunidade.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="equipa" class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Nossa Equipa</h2>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+                    <div class="card h-100 shadow-sm border-0 text-center">
+                   <img src="img/gerry.jfif"  class="card-img-top mx-auto mt-3 rounded-circle" style="width:150px; height:150px; object-fit: cover;" alt="Gerry Trindade">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Gerry Trindade</h5>
+                            <p class="card-text">Desenvolvedor da Aplicação</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+                    <div class="card h-100 shadow-sm border-0 text-center">
+                      <img src="img/logo_Mario.jfif"  class="card-img-top mx-auto mt-3 rounded-circle" style="width:150px; height:150px; object-fit: cover;" alt="Mario junior">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Mario junior</h5>
+                            <p class="card-text">Desenvolvedor da Aplicação</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="software" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold" data-aos="fade-up">Software</h2>
+
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card shadow-sm border-0 h-100 text-center">
+                        <img src="img/camva.jpg" class="card-img-top p-4" style="height:120px; object-fit:contain;">
+                        <div class="card-body">
+                            <h5 class="fw-bold">Canva</h5>
+                            <p>Ferramenta usada para design e prototipagem da aplicação.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card shadow-sm border-0 h-100 text-center">
+                        <img src="img/vscode.jpg" class="card-img-top p-4" style="height:120px; object-fit:contain;">
+                        <div class="card-body">
+                            <h5 class="fw-bold">VS Code</h5>
+                            <p>Editor de código utilizado no desenvolvimento.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card shadow-sm border-0 h-100 text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" class="card-img-top p-4"
+                            style="height:120px; object-fit:contain;">
+                        <div class="card-body">
+                            <h5 class="fw-bold">GitHub</h5>
+                            <p>Plataforma para controlo de versões e colaboração.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card shadow-sm border-0 h-100 text-center">
+                        <img src="img/git-icon-logo.png" class="card-img-top p-4"
+                            style="height:120px; object-fit:contain;">
+                        <div class="card-body">
+                            <h5 class="fw-bold">GIT</h5>
+                            <p>Sistema de controlo de versões.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card shadow-sm border-0 h-100 text-center">
+                        <img src="img/androidstudio.png.png" class="card-img-top p-4"
+                            style="height:120px; object-fit:contain;">
+                        <div class="card-body">
+                            <h5 class="fw-bold">Android Studio</h5>
+                            <p>IDE para desenvolvimento de aplicações Android.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="linguagens" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold" data-aos="fade-up">Linguagens</h2>
+
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card shadow-sm border-0 h-100 text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" class="card-img-top p-4"
+                            style="height:120px; object-fit:contain;">
+                        <div class="card-body">
+                            <h5 class="fw-bold">Java</h5>
+                            <p>Linguagem principal da aplicação.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card shadow-sm border-0 h-100 text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" class="card-img-top p-4"
+                            style="height:120px; object-fit:contain;">
+                        <div class="card-body">
+                            <h5 class="fw-bold">JavaScript</h5>
+                            <p>Responsável pelo frontend.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card shadow-sm border-0 h-100 text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" class="card-img-top p-4"
+                            style="height:120px; object-fit:contain;">
+                        <div class="card-body">
+                            <h5 class="fw-bold">SQL</h5>
+                            <p>Gestão da base de dados.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card shadow-sm border-0 h-100 text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" class="card-img-top p-4"
+                            style="height:120px; object-fit:contain;">
+                        <div class="card-body">
+                            <h5 class="fw-bold">CSS</h5>
+                            <p>Estilo e aparência da app.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-3">
+        <p class="mb-0">© 2026 Igrejas+ - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+
 </body>
+
 </html>
